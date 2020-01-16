@@ -41,6 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+// # TASK 1 & 2
 // Nav
 let navElements = document.querySelectorAll('nav a');
 navElements.forEach((anchor, i) => {
@@ -76,4 +77,26 @@ contactElements.forEach((element, i) => {
 
 // Footer
 document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
+
+// # TASK 3
+// Nav color green
+navElements.forEach(element => {
+  element.style.color = 'green';
+});
+
+// Appending and prepending to the nav
+let nav = document.querySelector('nav');
+const blogLink = document.createElement('a');
+blogLink.textContent = 'Blog';
+nav.appendChild(blogLink);
+const careersLink = document.createElement('a');
+careersLink.textContent = 'Careers';
+nav.prepend(careersLink);
+
+
+// # STRETCH
+// Assorted styling
+
+
 
