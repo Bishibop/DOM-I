@@ -39,4 +39,41 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// Nav
+let navElements = document.querySelectorAll('nav a');
+navElements.forEach((anchor, i) => {
+  anchor.textContent = siteContent["nav"][`nav-item-${i+1}`];
+});
+
+// CTA
+let ctaElement = document.querySelector('.cta h1');
+ctaElement.textContent = siteContent['cta']['h1'];
+document.querySelector('.cta button').textContent = siteContent['cta']['button'];
+document.querySelector('.cta img').src = siteContent['cta']['img-src'];
+
+// Main Content
+let mainContentValues = Object.values(siteContent['main-content']);
+mainContentValues.splice(4, 1);
+let mainContentHeaders = document.querySelectorAll('.main-content h4');
+mainContentHeaders.forEach((header, i) => {
+  header.textContent = mainContentValues[i * 2];
+});
+let mainContentParagraphs = document.querySelectorAll('.main-content p');
+mainContentParagraphs.forEach((paragraph, i) => {
+  paragraph.textContent = mainContentValues[(i * 2) + 1];
+});
+let mainContentImg = document.querySelector('.main-content img');
+mainContentImg.src = siteContent['main-content']['middle-img-src'];
+
+// Contact
+let contactElements = Array.from(document.querySelector('.contact').children);
+const contactValues = Object.values(siteContent['contact']);
+contactElements.forEach((element, i) => {
+  element.textContent = contactValues[i];
+});
+
+// Footer
+document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
