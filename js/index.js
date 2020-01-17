@@ -49,8 +49,8 @@ navElements.forEach((anchor, i) => {
 });
 
 // CTA
-let ctaElement = document.querySelector('.cta h1');
-ctaElement.textContent = siteContent['cta']['h1'];
+let ctaHeader = document.querySelector('.cta h1');
+ctaHeader.textContent = siteContent['cta']['h1'];
 document.querySelector('.cta button').textContent = siteContent['cta']['button'];
 document.querySelector('.cta img').src = siteContent['cta']['img-src'];
 
@@ -97,6 +97,19 @@ nav.prepend(careersLink);
 
 // # STRETCH
 // Assorted styling
+mainContentHeaders.forEach(header => {
+  header.style.color = 'blue';
+});
+mainContentParagraphs.forEach(paragraph => {
+  paragraph.style.fontSize = 'larger';
+});
+mainContentImg.style.transform = 'rotate(180deg)';
+ctaHeader.style.fontFamily = 'Impact,sans-serif';
+
+let navElements2 = document.querySelectorAll('nav a');
+navElements2.forEach(element => {
+  element.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+});
 
 
 
