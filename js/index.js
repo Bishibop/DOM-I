@@ -106,9 +106,18 @@ mainContentParagraphs.forEach(paragraph => {
 mainContentImg.style.transform = 'rotate(180deg)';
 ctaHeader.style.fontFamily = 'Impact,sans-serif';
 
+
+// Active cta button
 let navElements2 = document.querySelectorAll('nav a');
-navElements2.forEach(element => {
-  element.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+function spinThoseDials() {
+  navElements2.forEach(element => {
+    element.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+  });
+}
+let ctaButton = document.querySelector('.cta button');
+ctaButton.textContent = "SPIN THOSE DIALS";
+ctaButton.addEventListener('click', e => {
+  spinThoseDials();
 });
 
 
